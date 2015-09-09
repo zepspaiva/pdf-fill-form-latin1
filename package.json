@@ -25,7 +25,7 @@
   "devDependencies": {},
   "optionalDependencies": {},
   "scripts": {
-    "install": "node-gyp rebuild"
+    "install": "sudo node-gyp rebuild"
   },
   "bugs": {
     "url": "https://github.com/tpisto/pdf-fill-form/issues"
