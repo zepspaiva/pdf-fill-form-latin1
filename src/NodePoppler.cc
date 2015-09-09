@@ -119,6 +119,8 @@ WriteFieldsParams v8ParamsToCpp(const v8::FunctionCallbackInfo<Value>& args) {
   string saveFormat = "imgpdf";
   map<string, string> fields;
 
+
+
   string sourcePdfFileName = *NanAsciiString(args[0]);
   Local<Object> changeFields = args[1]->ToObject();
 
@@ -136,6 +138,11 @@ WriteFieldsParams v8ParamsToCpp(const v8::FunctionCallbackInfo<Value>& args) {
   for (uint32_t i = 0; i < fieldArray->Length(); i += 1) {
     Local<Value> name = fieldArray->Get(i);
     Local<Value> value = changeFields->Get(name);
+
+  //QString qvalue = "testanç˜"//QString::fromUtf8(*v8::String::Utf8Value(value));
+    //std::string s = qvalue.toAscii().constData();
+
+
     fields[std::string(*v8::String::Utf8Value(name))] = std::string(*v8::String::Utf8Value(value));
   }
 

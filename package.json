@@ -1,11 +1,15 @@
 {
   "author": "Tommi Pisto <tommi@pis.to>",
-  "name": "pdf-fill-form",
-  "description": "Fill PDF forms and return rendered PDF in buffer. No temporary files created.",
+  "name": "pdf-fill-form-latin1",
+  "description": "Fill PDF forms and return rendered PDF in buffer. No temporary files created. Modified so it can read ISO-8859-1 field names.",
   "keywords": [
-    "pdf", "forms", "poppler", "qt4", "cairo"
+    "pdf",
+    "forms",
+    "poppler",
+    "qt4",
+    "cairo"
   ],
-  "version": "1.1.0",
+  "version": "1.1.1",
   "repository": {
     "type": "git",
     "url": "git://github.com/tpisto/pdf-fill-form.git"
@@ -19,5 +23,13 @@
     "nan": "~1.7.0"
   },
   "devDependencies": {},
-  "optionalDependencies": {}
+  "optionalDependencies": {},
+  "scripts": {
+    "install": "node-gyp rebuild"
+  },
+  "bugs": {
+    "url": "https://github.com/tpisto/pdf-fill-form/issues"
+  },
+  "homepage": "https://github.com/tpisto/pdf-fill-form#readme",
+  "license": "ISC"
 }
