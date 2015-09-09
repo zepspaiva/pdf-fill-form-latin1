@@ -276,9 +276,11 @@ NAN_METHOD(ReadSync) {
 
       if (!field->isReadOnly() && field->isVisible()) {
 
+        //QString::fromUtf8(field->fullyQualifiedName().toLatin1()).toStdString()
+
         // Make JavaScript object out of the fieldnames
         Local<Object> obj = NanNew<Object>();
-        obj->Set(NanNew<String>("name"), NanNew<String>(field->fullyQualifiedName().toStdString()));
+        obj->Set(NanNew<String>("name"), NanNew<String>(QString(field->fullyQualifiedName().toUtf8()).toStdString()));
         obj->Set(NanNew<String>("page"), NanNew<Number>(i));
 
         // ! TODO ! Note. Poppler doesn't support checkboxes with hashtag names (aka using exportValue).
